@@ -9,6 +9,7 @@ class agentExperimentEnv(gym.Env):
     self.c2_placement = 0
     self.c2_tireWear = 5
     self.max_placement = 10
+<<<<<<< HEAD
 
   def step(self, action):
     #isInMaxPlacement(self.c2_placement): stop the episode
@@ -20,6 +21,17 @@ class agentExperimentEnv(gym.Env):
     if not test: #move forward AND decrementTireWear
        self.c2_placement = agentExperimentEnv.moveForward(self, self.c2_placement) 
        self.c2_tireWear = agentExperimentEnv.decrementTireWear(self, self.c2_tireWear)
+=======
+    
+  def step(self, action):
+    #isInMaxPlacement(self.c2_placement): stop the episode
+    
+    if isWorn(self.c2_tireWear): #change tire AND resetTireWear
+       self.c2_tireWear = resetTireWear(self.c2_tireWear)
+    if not isWorn(self.c2_tireWear): #move forward AND decrementTireWear
+       self.c2_placement = moveForward(self.c2_placement) 
+       self.c2_tireWear = decrementTireWear(self.c2_tireWear)
+>>>>>>> 266519847608b4202a6b2f027fa4686ea9e66336
     
   def isWorn(self, tireWear):
     if tireWear <= 0:
@@ -50,8 +62,17 @@ class agentExperimentEnv(gym.Env):
     self.c2_tireWear = 5
     
   def render(self, mode='human'):
+<<<<<<< HEAD
     print("Car 2 placement: " , self.c2_placement, "Car 2 tire wear: " , self.c2_tireWear)
     
   #def isEpisodeDone(self):
     
     
+=======
+    print("Car 2 placement: " , c2_placement)
+    print("Car 2 tire wear: " , c2_tireWear)
+    
+  #def isEpisodeDone(self):
+    
+    
+>>>>>>> 266519847608b4202a6b2f027fa4686ea9e66336
