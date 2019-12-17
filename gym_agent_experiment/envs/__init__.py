@@ -1,2 +1,2 @@
-from gym_foo.envs.foo_env import FooEnv
-from gym_foo.envs.foo_extrahard_env import FooExtraHardEnv
+from gym_agent_experiment.envs.agent_experiment_env import agentExperimentEnv
+#from gym_foo.envs.foo_extrahard_env import FooExtraHardEnv
